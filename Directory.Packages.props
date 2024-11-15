@@ -1,26 +1,27 @@
 <Project>
-    <PropertyGroup>
-        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-        <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
-    </PropertyGroup>
-    <PropertyGroup>
-        <AvaloniaVersion>11.1.0</AvaloniaVersion>
-    </PropertyGroup>
-    <ItemGroup>
-        <PackageVersion Include="Avalonia" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.Android" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.Browser" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.iOS" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.3.2" />
-        <PackageVersion Include="coverlet.collector" Version="6.0.0" />
-        <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
-        <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-        <PackageVersion Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.13" />
-        <PackageVersion Include="xunit" Version="2.5.3" />
-        <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.3" />
-    </ItemGroup>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AvaloniaVersion>11.1.0</AvaloniaVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="Avalonia" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Android" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Browser" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.iOS" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+    <PackageVersion Include="Microsoft.Maui.Essentials" Version="9.0.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageVersion Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.13" />
+    <PackageVersion Include="xunit" Version="2.5.3" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.3" />
+  </ItemGroup>
 </Project>
