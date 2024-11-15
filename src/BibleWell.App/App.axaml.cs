@@ -8,7 +8,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace BibleWell.App;
 
-// this is the Avalonia equivalent of a Program.cs file
 public partial class App : Application
 {
     public override void Initialize()

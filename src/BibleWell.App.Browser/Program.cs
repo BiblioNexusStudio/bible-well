@@ -1,9 +1,10 @@
 ﻿using System.Runtime.Versioning;
 using Avalonia;
 using Avalonia.Browser;
-using BibleWell.App;
 
 [assembly: SupportedOSPlatform("browser")]
+
+namespace BibleWell.App.Browser;
 
 internal sealed partial class Program
 {

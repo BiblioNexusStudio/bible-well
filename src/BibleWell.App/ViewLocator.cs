@@ -3,6 +3,7 @@ using Avalonia.Controls.Templates;
 using BibleWell.App.ViewModels;
 
 namespace BibleWell.App;
+
 public class ViewLocator : IDataTemplate
 {
     public Control? Build(object? data)

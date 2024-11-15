@@ -3,6 +3,7 @@ using Avalonia;
 using Avalonia.Android;
 
 namespace BibleWell.App.Android;
+
 [Activity(
     Label = "BibleWell.App.Android",
     Theme = "@style/MyTheme.NoActionBar",

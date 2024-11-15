@@ -1,12 +1,18 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:BibleWell.App.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:views="clr-namespace:BibleWell.App.Views"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="BibleWell.App.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="BibleWell.App">
-        <views:MainView />
+<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:BibleWell.App.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="clr-namespace:BibleWell.App.Views"
+    mc:Ignorable="d"
+    d:DesignWidth="540"
+    d:DesignHeight="960"
+    x:Class="BibleWell.App.Views.MainWindow"
+    Icon="/Assets/well-icon.png"
+    Title="Bible Well">
+
+    <!-- The Main Window is only used by Desktop applications so just load in the Main View. -->
+    <views:MainView></views:MainView>
+
 </Window>

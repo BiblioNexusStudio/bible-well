@@ -9,6 +9,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <AvaloniaXaml Remove="Assets\Icons.axaml" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="Avalonia" />
         <PackageReference Include="Avalonia.Themes.Fluent" />
         <PackageReference Include="Avalonia.Fonts.Inter" />
@@ -16,5 +20,11 @@
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" />
         <PackageReference Include="CommunityToolkit.Mvvm" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AvaloniaResource Update="Assets\Icons.axaml">
+        <SubType>Designer</SubType>
+      </AvaloniaResource>
     </ItemGroup>
 </Project>
