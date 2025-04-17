@@ -2,13 +2,23 @@
 
 public sealed class SqliteAquiferService : IReadWriteAquiferService
 {
-    public Task<ResourceContent?> GetResourceContentAsync(int contentId)
+    private readonly ResourceContentRepository _resourceContentRepository;
+
+    public SqliteAquiferService()
     {
-        return Task.FromResult<ResourceContent?>(null);
+        var dbManager = new SqliteDbManager(Constants.ConnectionString);
+        _resourceContentRepository = new ResourceContentRepository(dbManager);
     }
 
-    public Task SaveResourceContent(ResourceContent resource)
+    public Task<ResourceContent?> GetResourceContentAsync(int id)
     {
-        return Task.CompletedTask;
+        return _resourceContentRepository.GetByIdAsync(id);
     }
+
+    public Task SaveResourceContentAsync(ResourceContent resourceContent)
+    {
+        return _resourceContentRepository.SaveAsync(resourceContent);
+    }
+
+    // add other repositories here ...
 }

@@ -4,13 +4,13 @@
 
     <!--
         Loading resources here instead of at the application level allows global styles to also reference global resources.
-        Example: `<Setter Property="Background" Value="{StaticResource InfoColor}"/>`
+        Example: `<Setter Property="Background" Value="{StaticResource InfoColor}" />`
         (where `InfoColor` would be defined in AppResources.axaml)
     -->
     <Styles.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="/Assets/AppResources.axaml"/>
+                <ResourceInclude Source="/Assets/AppResources.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Styles.Resources>

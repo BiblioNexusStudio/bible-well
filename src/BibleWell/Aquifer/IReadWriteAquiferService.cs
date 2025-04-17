@@ -2,5 +2,5 @@
 
 public interface IReadWriteAquiferService : IReadOnlyAquiferService
 {
-    Task SaveResourceContent(ResourceContent resource);
+    Task SaveResourceContentAsync(ResourceContent resource);
 }

@@ -25,7 +25,7 @@
             </FluentTheme.Palettes>
             -->
         </FluentTheme>
-        <StyleInclude Source="/Assets/AppStyles.axaml"/>
+        <StyleInclude Source="/Assets/AppStyles.axaml" />
         <StyleInclude Source="/Assets/Icons.axaml"></StyleInclude>
     </Application.Styles>
 

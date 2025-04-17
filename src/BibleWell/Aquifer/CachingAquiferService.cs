@@ -11,7 +11,7 @@ public class CachingAquiferService(IReadOnlyAquiferService _readOnlyAquiferServi
             resource = await _readOnlyAquiferService.GetResourceContentAsync(contentId);
             if (resource != null)
             {
-                await _readWriteAquiferService.SaveResourceContent(resource);
+                await _readWriteAquiferService.SaveResourceContentAsync(resource);
             }
         }
 

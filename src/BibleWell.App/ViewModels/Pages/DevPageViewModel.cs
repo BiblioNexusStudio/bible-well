@@ -1,11 +1,12 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using BibleWell.Aquifer;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Maui.Media;
 using Microsoft.Maui.Storage;
 
 namespace BibleWell.App.ViewModels.Pages;
 
-public sealed partial class DevPageViewModel : PageViewModelBase
+public sealed partial class DevPageViewModel(IReadWriteAquiferService _sqliteAquiferService) : PageViewModelBase
 {
     [ObservableProperty]
     private string _fileName = "Click button to show file picker...";
@@ -36,6 +37,25 @@ public sealed partial class DevPageViewModel : PageViewModelBase
         try
         {
             await TextToSpeech.Default.SpeakAsync(FileName);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            throw;
+        }
+    }
+
+    [ObservableProperty]
+    private string _resourceContentHtml = "<p>Click the button to view resource text...</p>";
+
+    [RelayCommand]
+    public async Task LoadResourceContentAsync()
+    {
+        try
+        {
+            ResourceContentHtml = (await _sqliteAquiferService.GetResourceContentAsync(1))
+                ?.Content
+                ?? "resource not found";
         }
         catch (Exception ex)
         {

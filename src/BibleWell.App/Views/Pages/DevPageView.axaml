@@ -4,6 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:BibleWell.App.ViewModels.Pages"
+    xmlns:avalonia="clr-namespace:TheArtOfDev.HtmlRenderer.Avalonia;assembly=Avalonia.HtmlRenderer"
     mc:Ignorable="d"
     d:DesignWidth="492"
     d:DesignHeight="960"
@@ -23,6 +24,14 @@
                 Perform text-to-speech
             </Button>
         </StackPanel>
-    </StackPanel>
 
+
+        <StackPanel Orientation="Horizontal" Spacing="5">
+            <Button Command="{Binding LoadResourceContentAsync}"
+                Margin="0 0 0 10">
+                Load from SQLite DB
+            </Button>
+        </StackPanel>
+        <avalonia:HtmlPanel Text="{Binding ResourceContentHtml}" />
+    </StackPanel>
 </UserControl>
