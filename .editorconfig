@@ -8,6 +8,20 @@ root = true
 guidelines = 140
 guidelines_style = 1px solid gray
 
+#### Core EditorConfig Options ####
+
+# Indentation and spacing
+indent_size = 4
+indent_style = space
+tab_width = 4
+max_line_length = 140
+
+# New line preferences
+insert_final_newline = false
+
+# C# files
+[*.cs]
+
 # ReSharper properties
 resharper_csharp_wrap_arguments_style = chop_if_long
 resharper_csharp_wrap_parameters_style = chop_if_long
@@ -25,9 +39,6 @@ resharper_wrap_before_first_type_parameter_constraint = true
 resharper_wrap_chained_binary_expressions = chop_if_long
 resharper_wrap_chained_method_calls = chop_if_long
 resharper_wrap_list_pattern = chop_if_long
-
-# C# files
-[*.cs]
 
 dotnet_analyzer_diagnostic.category-style.severity = warning
 dotnet_analyzer_diagnostic.category-design.severity = warning
@@ -50,17 +61,6 @@ dotnet_diagnostic.ide0042.severity = suggestion
 # Suppress requirement to always use collection initializers
 dotnet_diagnostic.ide0305.severity = suggestion
 
-#### Core EditorConfig Options ####
-
-# Indentation and spacing
-indent_size = 4
-indent_style = space
-tab_width = 4
-max_line_length = 140
-
-# New line preferences
-insert_final_newline = false
-
 #### .NET Coding Conventions ####
 
 # Attributes on lines above
@@ -69,7 +69,7 @@ place_attribute_on_same_line = false
 # Organize usings
 dotnet_separate_import_directive_groups = false
 dotnet_sort_system_directives_first = true
-file_header_template = 
+file_header_template =
 
 # this. and Me. preferences
 dotnet_style_qualification_for_event = false:error
@@ -279,15 +279,15 @@ dotnet_naming_symbols.constant_fields.required_modifiers = const
 
 dotnet_naming_symbols.interface.applicable_kinds = interface
 dotnet_naming_symbols.interface.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.interface.required_modifiers = 
+dotnet_naming_symbols.interface.required_modifiers =
 
 dotnet_naming_symbols.types.applicable_kinds = class, struct, interface, enum
 dotnet_naming_symbols.types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.types.required_modifiers = 
+dotnet_naming_symbols.types.required_modifiers =
 
 dotnet_naming_symbols.non_field_members.applicable_kinds = property, event, method
 dotnet_naming_symbols.non_field_members.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
-dotnet_naming_symbols.non_field_members.required_modifiers = 
+dotnet_naming_symbols.non_field_members.required_modifiers =
 
 dotnet_naming_symbols.private_static_fields_symbols.applicable_accessibilities = private
 dotnet_naming_symbols.private_static_fields_symbols.applicable_kinds = field
@@ -305,17 +305,17 @@ dotnet_naming_symbols.private_constants_symbols.required_modifiers = const
 
 # Naming styles
 
-dotnet_naming_style.pascal_case.required_prefix = 
-dotnet_naming_style.pascal_case.required_suffix = 
-dotnet_naming_style.pascal_case.word_separator = 
+dotnet_naming_style.pascal_case.required_prefix =
+dotnet_naming_style.pascal_case.required_suffix =
+dotnet_naming_style.pascal_case.word_separator =
 dotnet_naming_style.pascal_case.capitalization = pascal_case
 
 dotnet_naming_style.prefix_underscore.capitalization = camel_case
 dotnet_naming_style.prefix_underscore.required_prefix = _
 
 dotnet_naming_style.begins_with_i.required_prefix = I
-dotnet_naming_style.begins_with_i.required_suffix = 
-dotnet_naming_style.begins_with_i.word_separator = 
+dotnet_naming_style.begins_with_i.required_suffix =
+dotnet_naming_style.begins_with_i.word_separator =
 dotnet_naming_style.begins_with_i.capitalization = pascal_case
 
 dotnet_naming_style.s_lower_camel_case_style.capitalization = camel_case
@@ -327,3 +327,27 @@ resharper_csharp_max_formal_parameters_on_line = 6
 resharper_csharp_continuous_indent_multiplier = 1
 resharper_csharp_max_invocation_arguments_on_line = 6
 resharper_csharp_wrap_list_pattern = chop_if_long
+
+# XAML
+[*.xaml,  *.axaml]
+resharper_xml_pi_attribute_style = on_different_lines
+resharper_xml_attribute_style = on_different_lines
+
+# XML (including XAML)
+[*.xml, *.xaml,  *.axaml, *.csproj, *.config, *.targets, *.props]
+resharper_xml_space_after_last_pi_attribute = false
+resharper_xml_spaces_around_eq_in_attribute = false
+resharper_xml_space_after_last_attribute = false
+#ij_xml_space_inside_empty_tag = true
+resharper_xml_space_before_self_closing = true
+resharper_xml_attribute_indent = single_indent
+resharper_xml_keep_user_linebreaks = true
+resharper_xml_linebreaks_inside_tags_for_multiline_elements = true
+resharper_xml_linebreaks_inside_tags_for_elements_with_child_elements = true
+resharper_xml_linebreaks_inside_tags_for_elements_longer_than = 140
+resharper_xml_spaces_inside_tags = false
+resharper_xml_indent_child_elements = one_indent
+resharper_xml_indent_text = one_indent
+resharper_xml_max_blank_lines_between_tags = 1
+resharper_xml_linebreak_before_multiline_elements = true
+resharper_xml_pi_attributes_indent = single_indent
