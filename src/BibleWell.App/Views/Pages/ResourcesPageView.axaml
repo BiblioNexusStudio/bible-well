@@ -11,6 +11,10 @@
     x:Class="BibleWell.App.Views.Pages.ResourcesPageView"
     x:DataType="vm:ResourcesPageViewModel">
 
+    <Design.DataContext>
+        <vm:DesignResourcesPageViewModel />
+    </Design.DataContext>
+
     <StackPanel>
         <TextBlock Classes="h2">Resources Page</TextBlock>
         <Button Command="{Binding PopulateResourceContentAsync}">

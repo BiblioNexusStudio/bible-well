@@ -27,5 +27,6 @@
 
     <ItemGroup>
         <ProjectReference Include="..\BibleWell.App\BibleWell.App.csproj" />
+        <ProjectReference Include="..\BibleWell.Platform.Maui\BibleWell.Platform.Maui.csproj" />
     </ItemGroup>
 </Project>

@@ -50,6 +50,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\pre-merge.yml = .github\workflows\pre-merge.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibleWell.Platform.Maui", "src\BibleWell.Platform.Maui\BibleWell.Platform.Maui.csproj", "{233E7A76-E8A7-4404-BB46-7C7ED4E84B32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +111,12 @@ Global
 		{BC5A0DFD-1503-4EB9-9D04-BBBFAE1CE89A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BC5A0DFD-1503-4EB9-9D04-BBBFAE1CE89A}.Release-Optimized|Any CPU.ActiveCfg = Release|Any CPU
 		{BC5A0DFD-1503-4EB9-9D04-BBBFAE1CE89A}.Release-Optimized|Any CPU.Build.0 = Release|Any CPU
+		{233E7A76-E8A7-4404-BB46-7C7ED4E84B32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{233E7A76-E8A7-4404-BB46-7C7ED4E84B32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{233E7A76-E8A7-4404-BB46-7C7ED4E84B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{233E7A76-E8A7-4404-BB46-7C7ED4E84B32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{233E7A76-E8A7-4404-BB46-7C7ED4E84B32}.Release-Optimized|Any CPU.ActiveCfg = Release|Any CPU
+		{233E7A76-E8A7-4404-BB46-7C7ED4E84B32}.Release-Optimized|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,6 +132,7 @@ Global
 		{BC5A0DFD-1503-4EB9-9D04-BBBFAE1CE89A} = {97DC52D2-AAAC-47AA-9912-701BC7465BF8}
 		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {50E00028-435D-430C-998C-365DC2906EBC}
 		{039EFAFA-389F-4FEC-B995-E7ECC730C2DF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{233E7A76-E8A7-4404-BB46-7C7ED4E84B32} = {97DC52D2-AAAC-47AA-9912-701BC7465BF8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D34B3E09-1D09-437F-AF13-C71E677DEA6E}

@@ -8,7 +8,7 @@ namespace BibleWell.App.iOS;
 // application events from iOS.
 [Register("AppDelegate")]
 #pragma warning disable CA1711 // Identifiers should not have incorrect suffix
-public partial class AppDelegate : AvaloniaAppDelegate<App>
+public partial class AppDelegate : AvaloniaAppDelegate<iOSApp>
 #pragma warning restore CA1711 // Identifiers should not have incorrect suffix
 {
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)

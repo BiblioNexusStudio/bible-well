@@ -16,8 +16,17 @@ public sealed class ViewLocator : IDataTemplate
             return new TextBlock { Text = "Error: No ViewModel provided." };
         }
 
-        return _locator.GetValueOrDefault(data.GetType())?.Invoke()
-            ?? new TextBlock { Text = $"Error: ViewModel \"{data.GetType().Name}\" not registered." };
+        var viewModelType = data.GetType();
+
+        // If this is design-time then the view model we received might be a "Design*" view model and the base
+        // view model is the one actually registered.
+        if (Design.IsDesignMode && viewModelType.BaseType != null && viewModelType.Name.StartsWith("Design"))
+        {
+            viewModelType = viewModelType.BaseType;
+        }
+
+        return _locator.GetValueOrDefault(viewModelType)?.Invoke()
+            ?? new TextBlock { Text = $"Error: ViewModel \"{viewModelType.Name}\" not registered." };
     }
 
     public bool Match(object? data)

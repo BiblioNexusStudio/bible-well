@@ -4,6 +4,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
+using Avalonia.Styling;
 using BibleWell.App.Configuration;
 using BibleWell.App.ViewModels;
 using BibleWell.App.ViewModels.Pages;
@@ -12,6 +13,7 @@ using BibleWell.App.Views.Pages;
 using BibleWell.Aquifer;
 using BibleWell.Aquifer.Api;
 using BibleWell.Aquifer.Data;
+using BibleWell.Preferences;
 using CommunityToolkit.Extensions.DependencyInjection;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.Configuration;
@@ -29,6 +31,18 @@ public partial class App : Application
         AvaloniaXamlLoader.Load(this);
     }
 
+    // This method should be implemented in platform-specific projects.
+    protected virtual void ConfigurePlatform(ConfigurationBuilder configurationBuilder)
+    {
+        throw new NotImplementedException();
+    }
+
+    // This method should be implemented in platform-specific projects.
+    protected virtual void RegisterPlatformServices(IServiceCollection services)
+    {
+        throw new NotImplementedException();
+    }
+
     public override void OnFrameworkInitializationCompleted()
     {
         var config = ConfigureConfiguration();
@@ -38,6 +52,10 @@ public partial class App : Application
 
         var viewLocator = ConfigureViewLocator();
         DataTemplates.Add(viewLocator);
+
+        var userThemeVariant = serviceProvider.GetRequiredService<IUserPreferencesService>()
+            .Get(PreferenceKeys.ThemeVariant, "Default");
+        RequestedThemeVariant = new ThemeVariant(userThemeVariant, null);
 
         // configure Avalonia app main window
         var mainViewModel = Ioc.Default.GetRequiredService<MainViewModel>();
@@ -66,7 +84,7 @@ public partial class App : Application
         base.OnFrameworkInitializationCompleted();
     }
 
-    private static IConfiguration ConfigureConfiguration()
+    private IConfiguration ConfigureConfiguration()
     {
         var configurationBuilder = new ConfigurationBuilder();
 
@@ -78,6 +96,8 @@ public partial class App : Application
         using var environmentConfigurationSettingsFileStream = GetAppSettingsFileStream($"appsettings.{environment}.json");
         configurationBuilder.AddJsonStream(environmentConfigurationSettingsFileStream);
 
+        ConfigurePlatform(configurationBuilder);
+
         return configurationBuilder.Build();
 
         static Stream GetAppSettingsFileStream(string appSettingsFileName)
@@ -88,7 +108,7 @@ public partial class App : Application
         }
     }
 
-    private static ServiceProvider ConfigureServiceProvider(IConfiguration configuration)
+    private ServiceProvider ConfigureServiceProvider(IConfiguration configuration)
     {
         var services = new ServiceCollection();
 
@@ -111,6 +131,8 @@ public partial class App : Application
                 })
             .SetHandlerLifetime(TimeSpan.FromMinutes(5))
             .AddPolicyHandler(GetRetryPolicy());
+
+        RegisterPlatformServices(services);
 
         return services
             .BuildServiceProvider();

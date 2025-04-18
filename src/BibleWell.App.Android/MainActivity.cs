@@ -1,7 +1,6 @@
 ﻿using Android.Content.PM;
 using Avalonia;
 using Avalonia.Android;
-using Microsoft.Maui.ApplicationModel;
 
 namespace BibleWell.App.Android;
 
@@ -11,7 +10,7 @@ namespace BibleWell.App.Android;
     Icon = "@drawable/icon",
     MainLauncher = true,
     ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
-public class MainActivity : AvaloniaMainActivity<App>
+public class MainActivity : AvaloniaMainActivity<AndroidApp>
 {
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
     {
@@ -22,6 +21,6 @@ public class MainActivity : AvaloniaMainActivity<App>
     protected override void OnCreate(Bundle? savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
-        Platform.Init(this, savedInstanceState);
+        Microsoft.Maui.ApplicationModel.Platform.Init(this, savedInstanceState);
     }
 }

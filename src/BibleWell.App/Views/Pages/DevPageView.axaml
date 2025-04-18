@@ -12,17 +12,6 @@
 
     <StackPanel>
         <TextBlock Classes="h2">Dev Page</TextBlock>
-        <TextBlock
-            Margin="0 0 0 10"
-            Text="{Binding FileName}" />
-        <StackPanel Orientation="Horizontal" Spacing="5">
-            <Button Command="{Binding PickFileAsync}">
-                Pick File
-            </Button>
-            <Button Command="{Binding SpeakFileNameAsync}">
-                Perform text-to-speech
-            </Button>
-        </StackPanel>
     </StackPanel>
 
 </UserControl>

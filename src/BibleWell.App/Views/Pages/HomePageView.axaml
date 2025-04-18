@@ -10,6 +10,10 @@
     x:Class="BibleWell.App.Views.Pages.HomePageView"
     x:DataType="vm:HomePageViewModel">
 
+    <Design.DataContext>
+        <vm:DesignHomePageViewModel />
+    </Design.DataContext>
+
     <ScrollViewer>
         <StackPanel>
             <TextBlock Classes="h2">Home Page</TextBlock>
